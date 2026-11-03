@@ -1,26 +1,219 @@
-@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fffaf5;
+  color: #29251f;
+  font-family: "DM Sans", sans-serif;
+}
+
+.home {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+
+.hero {
+  text-align: center;
+  padding: 80px 20px 70px;
+  background: linear-gradient(135deg, #fff0df, #fffaf5);
+}
+
+.hero-tagline {
+  color: #e76f32;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 52px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: #e76f32;
+}
+
+.hero-description {
+  color: #77716a;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Recipes Section */
+
+.recipes-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 25px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.section-label {
+  color: #e76f32;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.section-heading h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+}
+
+.recipe-count {
+  color: #77716a;
+  font-size: 14px;
+}
+
+/* Recipe Grid */
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* Recipe Card */
+
+.recipe-card {
+  background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-6px);
+}
+
+.recipe-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.recipe-content {
+  padding: 20px;
+}
+
+.recipe-category {
+  display: inline-block;
+  background-color: #fff0df;
+  color: #e76f32;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.recipe-content h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.recipe-content p {
+  color: #77716a;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.recipe-time {
+  color: #55504a;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+
+@media (max-width: 900px) {
+  .recipe-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 550px) {
+  .recipe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+
+/* Navigation Bar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  background-color: white;
+  border-bottom: 1px solid #f0e8df;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #29251f;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #e76f32;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar nav a {
+  color: #55504a;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.navbar nav a:hover {
+  color: #e76f32;
 }
